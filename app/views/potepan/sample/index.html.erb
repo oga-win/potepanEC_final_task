@@ -29,71 +29,6 @@
 
     <div class="main-wrapper">
 
-      <!-- HEADER -->
-      <div class="header clearfix">
-
-        <!-- TOPBAR -->
-        <div class="topBar">
-          <div class="container">
-            <div class="row">
-              <div class="col-md-6 hidden-sm hidden-xs">
-                <ul class="list-inline">
-                  <li><a href="#"><i class="fa fa-twitter"></i></a></li>
-                  <li><a href="#"><i class="fa fa-facebook"></i></a></li>
-                </ul>
-              </div>
-              <div class="col-md-6 col-xs-12">
-                <ul class="list-inline pull-right">
-                  <li><!-- <span><a data-toggle="modal" href='.login-modal'>ログイン</a><small>or</small><a data-toggle="modal" href='#signup'>新規登録</a></span> --></li>
-                  <li class="dropdown searchBox">
-                    <a href="javascript:void(0)" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-search"></i></a>
-                    <ul class="dropdown-menu dropdown-menu-right">
-                      <form  id="form01" action="product-grid-left-sidebar.html" method="post">
-                      <li>
-                        <span class="input-group">
-                          <input type="text" name="searchWord" class="form-control" placeholder="Search…" aria-describedby="basic-addon2">
-                          <span onclick="FormSubmit();" class="input-group-addon addPointer" id="basic-addon2">検索</span>
-                        </span>
-                      </li>
-                      </form>
-                    </ul>
-                  </li>
-                  <li class="dropdown">
-                    <a href="cart-page.html" class="dropdown-toggle" data-toggle="dropdown disabled"><i class="fa fa-shopping-cart"></i></a>
-                  </li>
-                </ul>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <!-- NAVBAR -->
-        <nav class="navbar navbar-main navbar-default" role="navigation">
-          <div class="container">
-            <!-- Brand and toggle get grouped for better mobile display -->
-            <div class="navbar-header">
-              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
-                <span class="sr-only">Toggle navigation</span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-              </button>
-              <a class="navbar-brand" href="javascript:void(0)"><%= image_tag("logo.png") %></a>
-            </div>
-
-            <!-- Collect the nav links, forms, and other content for toggling -->
-            <div class="collapse navbar-collapse navbar-ex1-collapse">
-              <ul class="nav navbar-nav navbar-right">
-                <li class="active"><a href="javascript:void(0)">Home</a></li>
-                <li class="dropdown megaDropMenu">
-                  <a href="javascript:void(0)" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-delay="300" data-close-others="true" aria-expanded="false">Shop</a>
-                </li>
-              </ul>
-            </div><!-- /.navbar-collapse -->
-          </div>
-        </nav>
-      </div>
-
       <!-- BANNER -->
       <div class="bannercontainer">
         <div class="fullscreenbanner-container">
@@ -304,123 +239,14 @@
         </div>
       </section>
 
-      <!-- FOOTER -->
-      <!-- COPY RIGHT -->
-      <div id="footer" class="copyRight clearfix">
-        <div class="container">
-          <div class="row">
-            <div class="col-sm-7 col-xs-12">
-              <p>&copy; 2016-<%= Time.now.year %> Copyright Potepan Store .</p>
-            </div>
-            <div class="col-sm-5 col-xs-12">
-              <ul class="list-inline">
-                <li><a href="#"><i class="fa fa-twitter"></i></a></li>
-                <li><a href="#"><i class="fa fa-facebook"></i></a></li>
-              </ul>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-
     <!-- LOGIN MODAL -->
-    <div class="modal fade login-modal" id="login" tabindex="-1" role="dialog">
-      <div class="modal-dialog">
-        <div class="modal-content">
-          <div class="modal-header">
-            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-            <h3 class="modal-title">ログイン</h3>
-          </div>
-          <div class="modal-body">
-            <form action="login-" method="POST" role="form">
-              <div class="form-group">
-                <label for="login-email">メールアドレス</label>
-                <input type="email" class="form-control" id="login-email">
-              </div>
-              <div class="form-group">
-                <label for="login-password">パスワード</label>
-                <input type="password" class="form-control" id="login-password">
-              </div>
-              <div class="checkbox">
-                <label>
-                  <input type="checkbox"> 記憶しておく
-                </label>
-              </div>
-              <button type="submit" class="btn btn-primary btn-block">ログイン</button>
-              <a href="lost-password.html" class="btn btn-link btn-block">パスワードをお忘れの方</a>
-            </form>
-          </div>
-        </div>
-      </div>
-    </div>
+    <%= render 'layouts/login_model' %>
 
     <!-- SIGN UP MODAL -->
-    <div class="modal fade" id="signup" tabindex="-1" role="dialog">
-      <div class="modal-dialog">
-        <div class="modal-content">
-          <div class="modal-header">
-            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-            <h3 class="modal-title">新規登録</h3>
-          </div>
-          <div class="modal-body">
-            <form action="" method="POST" role="form">
-              <div class="form-group">
-                <label for="signup-email">メールアドレス</label>
-                <input type="email" class="form-control" id="signup-email">
-              </div>
-              <div class="form-group">
-                <label for="signup-password">パスワード</label>
-                <input type="password" class="form-control" id="signup-password">
-              </div>
-              <div class="form-group">
-                <label for="signup-password-confirmation">パスワード（確認用）</label>
-                <input type="password" class="form-control" id="signup-password-confirmation">
-              </div>
-              <button type="submit" class="btn btn-primary btn-block">登録する</button>
-            </form>
-          </div>
-        </div>
-      </div>
-    </div>
+    <%= render 'layouts/sign_up_model' %>
 
     <!-- PORDUCT QUICK VIEW MODAL -->
-    <div class="modal fade quick-view" tabindex="-1" role="dialog">
-      <div class="modal-dialog">
-        <div class="modal-content">
-          <div class="modal-body">
-            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-            <div class="media">
-              <div class="media-left">
-                <%= image_tag("products/quick-view/quick-view-01.jpg", :class => "media-object", :alt => "Image") %>
-              </div>
-              <div class="media-body">
-                <h2>Old Skool Navy</h2>
-                <h3>149円</h3>
-                <p>Classic sneaker from Vans. Cotton canvas and suede upper. Textile lining with heel stabilizer and ankle support. Contrasting laces. Sits on a classic waffle rubber sole.</p>
-                <span class="quick-drop">
-                  <select name="guiest_id3" id="guiest_id3" class="select-drop">
-                    <option value="0">S</option>
-                    <option value="1">M</option>
-                    <option value="2">L</option>
-                    <option value="3">XL</option>
-                  </select>
-                </span>
-                <span class="quick-drop resizeWidth">
-                  <select name="guiest_id4" id="guiest_id4" class="select-drop">
-                    <!-- <option value="0">数</option> -->
-                    <option value="1">1</option>
-                    <option value="2">2</option>
-                    <option value="3">3</option>
-                  </select>
-                </span>
-                <div class="btn-area">
-                  <a href="cart_page.html" class="btn btn-primary btn-block">カートへ入れる <i class="fa fa-angle-right" aria-hidden="true"></i></a>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
+    <%= render 'layouts/product_quick_view_model' %>
+
   </body>
 </html>
