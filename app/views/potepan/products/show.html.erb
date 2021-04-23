@@ -1,5 +1,5 @@
 <% provide(:title, @product.name) %>
-<%= render 'layouts/right_section' %>
+<%= render partial: 'layouts/right_section', locals: { product: @product } %>
 
 <!-- MAIN CONTENT SECTION -->
 <section class="mainContent clearfix">
