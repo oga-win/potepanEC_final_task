@@ -11,3 +11,9 @@ AllCops:
     - 'db/**/*'
     - 'config/**/*'
     - 'script/**/*'
+
+Airbnb/ConstAssignedInWrongFile:
+  Enabled: false
+  Include:
+    - 'app/**/*'
+    - 'lib/**/*'

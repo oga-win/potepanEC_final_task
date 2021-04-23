@@ -1,4 +1,4 @@
-Base_title = "BIGBAG Store"
+Base_title = "BIGBAG Store".freeze
 
 module ApplicationHelper
   def full_title(page_title)
