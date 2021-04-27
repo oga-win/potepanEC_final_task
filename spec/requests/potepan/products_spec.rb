@@ -15,6 +15,5 @@ RSpec.describe "Potepan::Products", type: :request do
     it "product name can be displayed" do
       expect(response.body).to include product.name
     end
-
   end
 end
