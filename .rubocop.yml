@@ -17,3 +17,6 @@ Airbnb/ConstAssignedInWrongFile:
   Include:
     - 'app/**/*'
     - 'lib/**/*'
+
+Airbnb/OptArgParameters:
+  Enabled: false

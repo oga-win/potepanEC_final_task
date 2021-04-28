@@ -1,15 +1,25 @@
 require 'rails_helper'
 
 RSpec.describe ApplicationHelper, type: :helper do
-  describe 'Application Title helpers' do
-    it 'Title is displayed(product name: test)' do
-      expect(full_title('test')).to eq 'test - BIGBAG Store'
+  describe '#full_title' do
+    subject { full_title(str) }
+
+    context "When string is given" do
+      let(:str) { 'test' }
+
+      it { is_expected.to eq 'test - BIGBAG Store' }
     end
-    it 'Title is displayed(product name: empty)' do
-      expect(full_title('')).to eq 'BIGBAG Store'
+
+    context "When empty string is given" do
+      let(:str) { '' }
+
+      it { is_expected.to eq 'BIGBAG Store' }
     end
-    it 'Title is displayed(product name: nil)' do
-      expect(full_title(nil)).to eq 'BIGBAG Store'
+
+    context "When nil string is given" do
+      let(:str) { nil }
+
+      it { is_expected.to eq 'BIGBAG Store' }
     end
   end
 end
