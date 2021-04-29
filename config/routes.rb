@@ -1,4 +1,7 @@
 Rails.application.routes.draw do
+  namespace :potepan do
+    get 'categories/show'
+  end
   mount Spree::Core::Engine, at: '/'
 
   namespace :potepan do
