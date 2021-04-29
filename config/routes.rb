@@ -1,7 +1,4 @@
 Rails.application.routes.draw do
-  namespace :potepan do
-    get 'categories/show'
-  end
   mount Spree::Core::Engine, at: '/'
 
   namespace :potepan do
@@ -24,5 +21,6 @@ Rails.application.routes.draw do
     get :privacy_policy,            to: 'sample#privacy_policy'
 
     resources :products,            only: [:show]
+    resources :categories,          only: [:show]
   end
 end
