@@ -1,0 +1,15 @@
+<div class="col-sm-4 col-xs-12">
+  <%= link_to potepan_product_path(product.id) do %>
+    <div class="productBox">
+      <div class="productImage clearfix">
+        <%= image_tag(product.display_image.attachment(:large)) %>
+      </div>
+      <div class="productCaption clearfix">
+        <a href="single_product.html">
+          <h5><%= product.name %></h5>
+        </a>
+        <h3><%= product.display_price %></h3>
+      </div>
+    </div>
+  <% end %>
+</div>
