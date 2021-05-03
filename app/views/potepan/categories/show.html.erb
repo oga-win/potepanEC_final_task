@@ -1,4 +1,4 @@
-<h1>Potepan::Categories#show</h1>
+<!--<h1>Potepan::Categories#show</h1>
 <p>Find me in app/views/potepan/categories/show.html.erb</p>
 name: <%= @taxon.name %><br>
 id: <%= @taxon.id %><br>
@@ -8,17 +8,39 @@ normal: <%= @taxon %><br>
     <%= i.id %>
     <%= i.name %>
     <%= i.images %>
-<% end %>
-<% @products.each do |ii| %><br>
+<% end %>-->
+<!--<% @products.each do |ii| %><br>
     <%= ii %>
-<% end %>
-<!--成功例<% @products.each do |i| %><br>
+<% end %>-->
+<!--<% @products.each do |i| %><br>
     <% i.images.each do |j| %>
         <%= image_tag(j.attachment(:small)) %>
         <%= j.position %>
     <% end %>
 <% end %>-->
-
+<!--<%= @taxon.id %><br>
+<%= @taxon.taxonomy_id %><br>
+<%= @taxonomies %><br>
+<%= @taxonomies.length %><br>
+<%= @products %>
+<% @taxonomies.each do |ii| %><br>
+    <%= ii.name %>
+    <%= ii.id %>
+    <% ii.leaves.each do |j| %><br>
+        name:<%= j.name %><br>
+        id:<%= j.id %>
+        <%= j.products.count %>
+    <% end %>
+<% end %>-->
+<% @taxonomies.each do |ii| %><br>
+    <% ii.leaves.each do |j| %><br>
+    <%= link_to potepan_category_path(ii.id) do %>
+        <%= j.name %><span><%= j.products.count %></span>
+    <% end %>
+    <% end %>
+<% end %>
+<% provide(:title, @taxon.name) %>
+<%= render 'layouts/right_section', product_name: @taxon.name %>
 <section class="mainContent clearfix productsContent">
   <div class="container">
     <div class="row">
@@ -28,23 +50,7 @@ normal: <%= @taxon %><br>
           <div class="panel-body">
             <div class="collapse navbar-collapse navbar-ex1-collapse navbar-side-collapse">
               <ul class="nav navbar-nav side-nav">
-                <li>
-                  <a href="javascript:;" data-toggle="collapse" data-target="#women">Categories<i class="fa fa-plus"></i></a>
-                  <ul id="women" class="collapse collapseItem">
-                    <li><a href="#"><i class="fa fa-caret-right" aria-hidden="true"></i>Bags <span>(2)</span></a></li>
-                    <li><a href="#"><i class="fa fa-caret-right" aria-hidden="true"></i>Mugs <span>(2)</span></a></li>
-                    <li><a href="#"><i class="fa fa-caret-right" aria-hidden="true"></i>Shirts <span>(1)</span></a></li>
-                    <li><a href="#"><i class="fa fa-caret-right" aria-hidden="true"></i>T-shirts <span>(4)</span></a></li>
-                  </ul>
-                </li>
-                <li>
-                  <a href="javascript:;" data-toggle="collapse" data-target="#men">Brand<i class="fa fa-plus"></i></a>
-                  <ul id="men" class="collapse collapseItem">
-                    <li><a href="#"><i class="fa fa-caret-right" aria-hidden="true"></i>Ruby <span>(1)</span></a></li>
-                    <li><a href="#"><i class="fa fa-caret-right" aria-hidden="true"></i>Apache <span>(1)</span></a></li>
-                    <li><a href="#"><i class="fa fa-caret-right" aria-hidden="true"></i>Rails <span>(7)</span></a></li>
-                  </ul>
-                </li>
+                <%= render partial: "sidebar_left" %>
               </ul>
             </div>
           </div>
