@@ -4,11 +4,11 @@ name: <%= @taxon.name %><br>
 id: <%= @taxon.id %><br>
 normal: <%= @taxon %><br>
 <%= @products %>-->
-<% @products.each do |i| %><br>
+<!--<% @products.each do |i| %><br>
     <%= i.id %><br>
     <%= i.name %><br>
     <%= i.taxons %>
-<% end %>
+<% end %>-->
 <!--<% @products.each do |ii| %><br>
     <%= ii %>
 <% end %>-->
@@ -18,7 +18,7 @@ normal: <%= @taxon %><br>
         <%= j.position %>
     <% end %>
 <% end %>-->
-<%= @taxon.id %><br>
+<!--<%= @taxon.id %><br>
 <%= @taxon.taxonomy_id %><br>
 <%= @taxonomies %><br>
 <%= @taxonomies.length %><br>
@@ -30,9 +30,9 @@ normal: <%= @taxon %><br>
         name:<%= j.name %><br>
         id:<%= j.id %>
         parent_id:<%= j.parent_id %>
-        <!--<%= j.products.count %>-->
+        <%= j.products.count %>
     <% end %>
-<% end %>
+<% end %>-->
 <!--<% @taxonomies.each do |ii| %><br>
     <% ii.leaves.each do |j| %><br>
     <%= link_to potepan_category_path(ii.id) do %>
