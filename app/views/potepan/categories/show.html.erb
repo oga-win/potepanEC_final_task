@@ -1,47 +1,26 @@
-<!--<h1>Potepan::Categories#show</h1>
-<p>Find me in app/views/potepan/categories/show.html.erb</p>
-name: <%= @taxon.name %><br>
-id: <%= @taxon.id %><br>
-normal: <%= @taxon %><br>
-<%= @products %>-->
-<!--<% @products.each do |i| %><br>
-    <%= i.id %><br>
-    <%= i.name %><br>
-    <%= i.taxons %>
-<% end %>-->
-<!--<% @products.each do |ii| %><br>
-    <%= ii %>
-<% end %>-->
-<!--<% @products.each do |i| %><br>
-    <% i.images.each do |j| %>
-        <%= image_tag(j.attachment(:small)) %>
-        <%= j.position %>
-    <% end %>
-<% end %>-->
-<!--<%= @taxon.id %><br>
-<%= @taxon.taxonomy_id %><br>
-<%= @taxonomies %><br>
-<%= @taxonomies.length %><br>
-<%= @products %>
-<% @taxonomies.each do |ii| %><br>
-    <%= ii.name %>
-    <%= ii.id %>
-    <% ii.leaves.each do |j| %><br>
-        name:<%= j.name %><br>
-        id:<%= j.id %>
-        parent_id:<%= j.parent_id %>
-        <%= j.products.count %>
-    <% end %>
-<% end %>-->
-<!--<% @taxonomies.each do |ii| %><br>
-    <% ii.leaves.each do |j| %><br>
-    <%= link_to potepan_category_path(ii.id) do %>
-        <%= j.name %><span><%= j.products.count %></span>
-    <% end %>
-    <% end %>
-<% end %>-->
 <% provide(:title, @taxon.name) %>
-<%= render 'layouts/right_section', product_name: @taxon.name %>
+<section class="lightSection clearfix pageHeader">
+  <div class="container">
+    <div class="row">
+      <div class="col-xs-6">
+        <div class="page-title">
+          <h2><%= @taxon.name %></h2>
+        </div>
+      </div>
+      <div class="col-xs-6">
+        <ol class="breadcrumb pull-right">
+          <li>
+            <%= link_to 'Home', potepan_path %>
+          </li>
+          <li>
+            <%= link_to 'Shop', '#' %>
+          </li>
+          <li class="active"><%= @taxon.name %></li>
+        </ol>
+      </div>
+    </div>
+  </div>
+</section>
 <section class="mainContent clearfix productsContent">
   <div class="container">
     <div class="row">
