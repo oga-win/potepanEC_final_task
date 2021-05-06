@@ -2,7 +2,7 @@ require 'rails_helper'
 
 RSpec.describe "Potepan::Products", type: :request do
   describe "GET #show" do
-    let(:product) { create(:product, taxons: [taxon] ) }
+    let(:product) { create(:product, taxons: [taxon]) }
     let(:taxon) { create(:taxon) }
 
     before do
