@@ -11,6 +11,7 @@ RSpec.describe "Potepan::Categories", type: :request do
     it 'returns http success' do
       expect(response).to have_http_status(:success)
     end
+
     it 'taxon name can be displayed' do
       expect(response.body).to include(taxon.name)
     end
