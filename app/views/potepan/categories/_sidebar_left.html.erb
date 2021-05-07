@@ -1,4 +1,4 @@
-<% @taxonomies.each do |taxonomy| %>
+<% taxonomies.each do |taxonomy| %>
   <li>
     <a href="javascript:;" data-toggle="collapse" data-target="#<%= taxonomy.id %>"><%= taxonomy.name %><i class="fa fa-plus"></i></a>
     <ul id="<%= taxonomy.id %>" class="collapse collapseItem">
