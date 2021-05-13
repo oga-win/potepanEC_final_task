@@ -15,12 +15,15 @@ RSpec.describe "Potepan::Categories", type: :request do
     it 'taxon name can be displayed' do
       expect(response.body).to include(taxon.name)
     end
+
     it 'taxonomy name can be displayed' do
       expect(response.body).to include(taxonomy.name)
     end
+
     it 'product name can be displayed' do
       expect(response.body).to include(product.name)
     end
+
     it 'product price can be displayed' do
       expect(response.body).to include(product.display_price.to_s)
     end

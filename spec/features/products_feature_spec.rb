@@ -11,30 +11,37 @@ RSpec.feature "ProductsFeatures", type: :feature do
     visit potepan_product_path(product.id)
     expect(page).to have_current_path potepan_product_path(product.id)
   end
+
   scenario "View title" do
     visit potepan_product_path(product.id)
     expect(page).to have_title "#{product.name} - BIGBAG Store"
   end
+
   scenario "View show page-title product-name" do
     visit potepan_product_path(product.id)
     expect(page).to have_selector ".page-title h2", text: product.name
   end
+
   scenario "View right-section product name for product page" do
     visit potepan_product_path(product.id)
     expect(page).to have_selector ".col-xs-6 h2", text: product.name
   end
+
   scenario "View media-body product name for product page" do
     visit potepan_product_path(product.id)
     expect(page).to have_selector ".media-body h2", text: product.name
   end
+
   scenario "View product-display_price" do
     visit potepan_product_path(product.id)
     expect(page).to have_selector ".media-body h3", text: product.display_price
   end
+
   scenario "View product-description" do
     visit potepan_product_path(product.id)
     expect(page).to have_selector ".media-body p", text: product.description
   end
+
   scenario "have_link back index-page" do
     visit potepan_product_path(product.id)
     expect(page).to have_link '一覧ページへ戻る', href: potepan_category_path(product.taxons.first.id)
