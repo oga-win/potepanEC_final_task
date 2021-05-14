@@ -10,11 +10,7 @@ RSpec.feature "ProductsFeatures", type: :feature do
   describe "About taxonomy" do
     before { visit potepan_product_path(product.id) }
 
-    scenario "View show page" do
-      expect(page).to have_current_path potepan_product_path(product.id)
-    end
-  
-    scenario "Show page title for product page" do
+      scenario "Show page title for product page" do
       expect(page).to have_title "#{product.name} - BIGBAG Store"
     end
   
