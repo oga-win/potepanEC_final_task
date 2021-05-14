@@ -12,10 +12,6 @@ RSpec.feature "CategoriesFeatures", type: :feature do
   describe "About taxonomy" do
     before { visit potepan_category_path(taxonomy.root.id) }
 
-    scenario "View category page" do
-      expect(current_path).to eq potepan_category_path(taxonomy.root.id)
-    end
-
     scenario "Show page-title on the category page" do
       expect(page).to have_title "#{taxonomy.root.name} - BIGBAG Store"
     end
@@ -57,10 +53,6 @@ RSpec.feature "CategoriesFeatures", type: :feature do
 
   describe "About bag" do
     before { visit potepan_category_path(bag.id) }
-
-    scenario "Bag page display" do
-      expect(current_path).to eq potepan_category_path(bag.id)
-    end
 
     scenario "Show page-title on the bag page" do
       expect(page).to have_title "#{bag.name} - BIGBAG Store"
