@@ -1,8 +1,8 @@
 require 'rails_helper'
 
 RSpec.feature "CategoriesFeatures", type: :feature do
-  let!(:taxonomy) { create(:taxonomy, name: "Category") }
-  let!(:taxon) { create(:taxon, parent: taxonomy.root) }
+  let(:taxonomy) { create(:taxonomy, name: "Category") }
+  let(:taxon) { create(:taxon, parent: taxonomy.root) }
   let!(:bag) { create(:taxon, name: "bag", taxonomy: taxonomy, parent: taxonomy.root) }
   let!(:shirts) { create(:taxon, name: "Shirts", taxonomy: taxonomy, parent: taxon) }
   let!(:product) do
