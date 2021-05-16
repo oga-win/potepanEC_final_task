@@ -41,6 +41,18 @@ RSpec.feature "CategoriesFeatures", type: :feature do
       expect(page).to have_link "Home", href: potepan_path
     end
 
+    scenario "It is possible to page transition when clicked product detail page" do
+      click_on 'sample-image'
+      expect(current_path).to eq potepan_product_path(product.id)
+    end
+
+    scenario "Click the Bag name of the category to display the Bag name" do
+      within("#category") do
+        click_on bag.name
+        expect(page).to have_content "#{bag.name}(#{bag.products.count})"
+      end
+    end
+
     scenario "The link to list products that belong to the same taxon is correct" do
       expect(page).to have_link bag.name, href: potepan_category_path(bag.id)
       expect(page).to have_link shirts.name, href: potepan_category_path(shirts.id)
